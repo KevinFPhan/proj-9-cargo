@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+          theme: {
+            extend: {
+                colors: {
+                    'cblue' : '#1e4a79',
+                    'cservices' : '#2C2C2C',
+                    'cgray' : '#ffffff',
+                    'cgray2' : '#2C2C2C',
+                },
+                backgroundImage: {
+                    'herorightpic' : 'url("https://desque.sfo3.cdn.digitaloceanspaces.com/kevin/CargoCrew/IMG_46121-1024x768.jpg")',
+                    'servicesrp' : 'url("https://desque.sfo3.cdn.digitaloceanspaces.com/kevin/CargoCrew/CC_Huy_Img1-1024x576.jpg")',
+                    'lastpic' : 'url("https://desque.sfo3.cdn.digitaloceanspaces.com/kevin/CargoCrew/The-Cargo-Crew-1024x768.jpg")',
+                },
+                height: {
+                    '900' : '900px',
+                    '450' : '450px',
+                    '650' : '650px',
+                    '325' : '325px',
+                    '350' : '350px',
+                }
+            }
+          }
+        }
+      </script>
+    <link rel="stylesheet" href="style.css">
+    <title>Cargo</title>
+</head>
+<body >
+
+    <nav class="sticky top-0 bg-gray-50 z-50 ">
+        <div class="h-24 w-full flex justify-around max-w-7xl mx-auto  ">
+            <div class="flex items-center">
+                <img class="h-12 w-auto  " src="https://desque.sfo3.cdn.digitaloceanspaces.com/kevin/CargoCrew/ThCargoCrew_Logo1-1024x175.png" alt="">
+            </div>
+            <div class="hidden md:flex items-center gap-9">
+                <a href="#">HOME</a>
+                <a href="#">SERVICES</a>
+                <a href="#">ABOUT</a>
+                <a href="#">CONTACT</a>
+            </div>
+            <div class="flex md:hidden items-center">
+                <svg  width="26" height="18" viewBox="0 0 26 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M13 17.5H0.25V14.6667H13V17.5ZM25.75 10.4167H0.25V7.58333H25.75V10.4167ZM25.75 3.33333H13V0.5H25.75V3.33333Z" fill="black"/></svg>
+            </div> 
+        </div>
+    </nav>
+
+    <!-- Home Section  -->
+    <section id="home" class="relative grid grid-cols-2 h-650 overflow-hidden">
+        <div class="absolute  top-0 sm:relative bg-cblue bg-opacity-80 w-full h-325 flex justify-center flex-col items-end ">
+            <h1 class="uppercase mr-10 text-white font-semibold text-4xl mb-4 md:text-5xl text-right leading-snug ">reliable and professional</h1>
+            <h1 class="uppercase mr-10 text-white text-right font-normal text-4xl md:text-5xl leading-snug">hauling provider</h1>
+        </div>
+        <div class="absolute bg-herorightpic bg-center bg-cover -z-10 row-span-2 w-full h-full">
+
+        </div>
+        <div class="absolute bottom-0 h-325 w-full xl:w-1/2">
+            <img class="object-cover object-center h-325 w-full" src="https://desque.sfo3.cdn.digitaloceanspaces.com/kevin/CargoCrew/FullSizeR2-1024x768.jpg" alt="leftpic">
+        </div> 
+    </section>
+    <!-- End Home Section -->
+
+    <!-- Services -->
+    <section id="services" class="w-full h-350 bg-white text-white">
+        <div class="bg-cservices w-full lg:w-1/2 h-full mx-auto flex flex-col justify-center px-10 ">
+            <h2 class="font-semibold text-4xl">About The Cargo Crew</h2>
+            <h1 class="text-cblue text-4xl mt-4">Trusted Shipping Nation Wide</h1>
+            <p class="mt-3">The Cargo Crew is a private freight company specialized in expediting the needs of commercial freight companies. Founded in 2019, The Cargo Crew is quickly earning the trust of the freighting and logistics industry as being a reliable asset to their company. The Cargo Crew aspires to being an industry leader and providing exemplary service.</p>
+        </div>
+    </section>
+    <!-- End Services -->
+
+    <!-- About  -->
+    <section id="about" class="relative grid grid-cols-2 h-900 w-full  ">
+        <div class="absolute z-10  flex h-450 w-1/2">
+            <div class=" w-full">
+                <img class="object-cover h-full w-full" src="https://desque.sfo3.cdn.digitaloceanspaces.com/kevin/CargoCrew/CC_Huy_Truck.jpg" alt="">
+            </div>
+            <div class=" w-full h-full flex flex-col justify-center items-end p-10  bg-cgray bg-opacity-80">
+                <h1 class="uppercase text-cblue">meet the owner</h1>    
+                <h1 class="uppercase ">huy</h1>
+                <h1 class="uppercase">nguyen</h1>
+            </div>
+        </div>
+        <div class="absolute bg-servicesrp bg-center bg-cover -z-10 bottom-0 w-full h-full"></div>
+        <!-- <div class="absolute -z-10   bottom-0 h-full w-full">
+            <img class="object-cover h-full w-full" src="https://desque.sfo3.cdn.digitaloceanspaces.com/kevin/CargoCrew/CC_Huy_Img1-1024x576.jpg" alt="rp">
+        </div> -->
+        <div class="absolute bottom-0 left-0 h-450 w-1/2">
+            <img class="h-full w-full object-cover" src="https://desque.sfo3.cdn.digitaloceanspaces.com/kevin/CargoCrew/CC_Huy_Img2-1024x768.jpg" alt="lp">
+        </div>
+        <div class="absolute h-1/2 w-1/2 bottom-0 right-0 flex items-center p-10 bg-cgray2 bg-opacity-70">
+            <p class="text-white ">Huy Nguyen is no stranger to success as both a business owner and competitive player in Houston market. Though that was not always the case. Like most immigrants family, he grew up struggling socially and and economically. Huy eventually found himself in the wrong crowd making bad decisions. Unable to get a job he knew he had to make some serious life changes. Huy finally saw the light at the end of the tunnel and unknown to him at the time it would change his life around. He started to work as an AC installer at only $8 an hour and learned the trade inside and out. In 2016 he risked his entire savings and pursued his dream of owning a business. He started AMS Coldpro and and solidfied himself as a trusted HVAC company in Houston. Determined and hungry for even more he founded The Cargo Crew. A true embodiment of the entrepreneur's spirit. He aspires to one day tell his story and inspire others to follow their dreams too.</p>
+        </div>
+    </section>
+    <!-- End About  -->
+
+    <!-- Contact -->
+    <section class="relative h-650 w-full bg-lastpic bg-cover bg-center lg:grid xl:grid-rows-1 xl:bg-none ">
+        <div class="absolute h-full w-full bg-cgray z-40 bg-opacity-80 lg:w-1/2 flex  ">
+            <div class="flex flex-col justify-center items-end pr-20 w-full">
+                <h1>CONTACT</h1>
+                <h1>US</h1>
+            </div>
+            <div class="flex flex-col justify-center w-full h-full">
+                <a href="tel:+1-832-312-4886" target="_blank"><button class="p-10">Call Us</button></a>
+                <p class="mt-5">832.312.4882</p>
+                <a class="mt-10" href="mailto:HUY@THECARGOCREW.COM" target="_blank"><button>Email Us</button></a>
+                <p class="mt-5">HUY@THECARGOCREW.COM</p>
+                <div class="mt-10">
+
+                </div>
+            </div>
+        </div>
+        <div class="bg-lastpic bg-cover bg-center">
+        </div>
+    </section>
+    <!-- End Contact  -->
+
+    <footer>
+
+    </footer>
+</body>
+</html>
