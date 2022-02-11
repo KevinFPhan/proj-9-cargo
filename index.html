@@ -1,16 +1,41 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="scroll-smooth" lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
+    
+    <style type="text/tailwindcss">
+        @layer base {
+            .selected-sect {
+                @apply border-cblue text-cblue border-b-2 !important;
+           }
+
+            .nav-hl {
+                transition: border-color 200ms, text-color 200ms;
+           }
+           .dropdown-content1 {
+               @apply p-10 w-full mx-auto  gap-4  hidden 
+           }
+           .dropdown-content1 a {
+               @apply w-full border-[1px] border-black cursor-pointer select-none  p-3 font-semibold hover:text-cblue hover:border-cblue  selected-sect
+           }
+
+           .show {
+                display:flex;
+                flex-direction: column;
+    
+            }
+        }
+    </style>
     <script>
         tailwind.config = {
           theme: {
             extend: {
                 colors: {
                     'cblue' : '#1e4a79',
+                    'cbhover' : '#0e3258',
                     'cservices' : '#2C2C2C',
                     'cgray' : '#ffffff',
                     'cgray2' : '#2C2C2C',
@@ -20,9 +45,16 @@
                     'servicesrp' : 'url("https://desque.sfo3.cdn.digitaloceanspaces.com/kevin/CargoCrew/CC_Huy_Img1-1024x576.jpg")',
                     'lastpic' : 'url("https://desque.sfo3.cdn.digitaloceanspaces.com/kevin/CargoCrew/The-Cargo-Crew-1024x768.jpg")',
                 },
+                minHeight: {
+                    '350' : '350px',
+                    '1/2' : '50%',
+                    '900' : '900px',
+                },
                 height: {
+                    '400' : '400px',
                     '900' : '900px',
                     '450' : '450px',
+                    '550' : '550px',
                     '650' : '650px',
                     '325' : '325px',
                     '350' : '350px',
@@ -30,31 +62,72 @@
             }
           }
         }
-      </script>
+    </script>
     <link rel="stylesheet" href="style.css">
     <title>Cargo</title>
 </head>
 <body >
 
     <nav class="sticky top-0 bg-gray-50 z-50 ">
-        <div class="h-24 w-full flex justify-around max-w-7xl mx-auto  ">
-            <div class="flex items-center">
+        <div class="h-24 w-full flex justify-around max-w-screen-2xl mx-auto  ">
+            <div class="flex items-center pr-24">
                 <img class="h-12 w-auto  " src="https://desque.sfo3.cdn.digitaloceanspaces.com/kevin/CargoCrew/ThCargoCrew_Logo1-1024x175.png" alt="">
             </div>
             <div class="hidden md:flex items-center gap-9">
-                <a href="#">HOME</a>
-                <a href="#">SERVICES</a>
-                <a href="#">ABOUT</a>
-                <a href="#">CONTACT</a>
+                <a href="#home" class=" nav-hl select-none font-semibold hover:text-cblue hover:border-cblue border-b-2 border-gray-50  " href="#">HOME</a>
+                <a href="#services" class="selected-sect nav-hl select-none font-semibold hover:text-cblue border-b-2 border-gray-50 hover:border-cblue" href="#">SERVICES</a>
+                <a href="#about" class=" nav-hl select-none font-semibold hover:text-cblue border-b-2 border-gray-50 hover:border-cblue" href="#">ABOUT</a>
+                <a href="#contact" class="nav-hl select-none font-semibold hover:text-cblue border-b-2 border-gray-50 hover:border-cblue" href="#">CONTACT</a>
             </div>
             <div class="flex md:hidden items-center">
-                <svg  width="26" height="18" viewBox="0 0 26 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M13 17.5H0.25V14.6667H13V17.5ZM25.75 10.4167H0.25V7.58333H25.75V10.4167ZM25.75 3.33333H13V0.5H25.75V3.33333Z" fill="black"/></svg>
+                <button onclick="myFunction()"  class="cursor-pointer dropbtn1 p-4  "><svg class="-z-10" width="26" focusable="false" height="18" viewBox="0 0 26 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M13 17.5H0.25V14.6667H13V17.5ZM25.75 10.4167H0.25V7.58333H25.75V10.4167ZM25.75 3.33333H13V0.5H25.75V3.33333Z" fill="black"/></svg></button>
             </div> 
         </div>
     </nav>
+    
+    <!-- <div class="dropdown">
+        <button onclick="myFunction()" class="dropbtn">Dropdown</button>
+          <div id="myDropdown" class="dropdown-content">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+          </div>
+        </div> -->
+
+
+
+    <!-- Dropdown Menu  -->  
+    <section class="dropdown1 relative block ">
+        <div id="myDropdown" class="dropdown-content1">
+            <a href="#home">HOME</a>
+            <a href="#services" >SERVICES</a>
+            <a href="#about" >ABOUT</a>
+            <a href="#contact" >CONTACT</a>
+        </div>
+    </section>
+
+
+    <!-- <section id="myDropDown" class="dropdown-content">
+        <div class="p-10 mx-auto w-full flex flex-col gap-4">
+            <a href="#home" class="w-full border-[1px] border-black cursor-pointer select-none  p-3 font-semibold hover:text-cblue hover:border-cblue  selected-sect">
+                <h1>HOME</h1>
+            </a>
+            <a href="#services" class="w-full border-[1px] border-black cursor-pointer select-none p-3 font-semibold hover:text-cblue hover:border-cblue nav-hl selected-sect">
+                <h1 class="nav-hl selected-sect">SERVICES</h1>
+            </a>
+            <a href="#about" class="w-full border-[1px] border-black cursor-pointer select-none p-3 font-semibold hover:text-cblue hover:border-cblue nav-hl selected-sect">
+                <h1 class="nav-hl selected-sect">ABOUT</h1>
+            </a>
+            <a href="#contact" class="w-full border-[1px] border-black cursor-pointer select-none p-3 font-semibold hover:text-cblue hover:border-cblue nav-hl selected-sect">
+                <h1 class="nav-hl selected-sect">CONTACT</h1>
+            </a>
+        </div>
+    </section> -->
+    
+    
 
     <!-- Home Section  -->
-    <section id="home" class="relative grid grid-cols-2 h-650 overflow-hidden">
+    <section id="home" class="sect relative grid grid-cols-2 h-650 overflow-hidden">
         <div class="absolute  top-0 sm:relative bg-cblue bg-opacity-80 w-full h-325 flex justify-center flex-col items-end ">
             <h1 class="uppercase mr-10 text-white font-semibold text-4xl mb-4 md:text-5xl text-right leading-snug ">reliable and professional</h1>
             <h1 class="uppercase mr-10 text-white text-right font-normal text-4xl md:text-5xl leading-snug">hauling provider</h1>
@@ -69,7 +142,7 @@
     <!-- End Home Section -->
 
     <!-- Services -->
-    <section id="services" class="w-full h-350 bg-white text-white">
+    <section id="services" class="sect w-full sm:h-350 h-450  bg-white text-white">
         <div class="bg-cservices w-full lg:w-1/2 h-full mx-auto flex flex-col justify-center px-10 ">
             <h2 class="font-semibold text-4xl">About The Cargo Crew</h2>
             <h1 class="text-cblue text-4xl mt-4">Trusted Shipping Nation Wide</h1>
@@ -79,44 +152,60 @@
     <!-- End Services -->
 
     <!-- About  -->
-    <section id="about" class="relative grid grid-cols-2 h-900 w-full  ">
-        <div class="absolute z-10  flex h-450 w-1/2">
-            <div class=" w-full">
-                <img class="object-cover h-full w-full" src="https://desque.sfo3.cdn.digitaloceanspaces.com/kevin/CargoCrew/CC_Huy_Truck.jpg" alt="">
+    <section id="about" class="sect relative grid grid-cols-2  h-900 w-full  ">
+        <div class="absolute z-10 h-350  flex sm:h-450 lg:w-1/2 w-full ">
+            <div class="w-full scale-x-110 hidden sm:block  ">
+                <img class="object-cover object-center h-full w-full " src="https://desque.sfo3.cdn.digitaloceanspaces.com/kevin/CargoCrew/CC_Huy_Truck.jpg" alt="">
             </div>
             <div class=" w-full h-full flex flex-col justify-center items-end p-10  bg-cgray bg-opacity-80">
-                <h1 class="uppercase text-cblue">meet the owner</h1>    
-                <h1 class="uppercase ">huy</h1>
-                <h1 class="uppercase">nguyen</h1>
+                <h1 class="uppercase text-cblue text-4xl font-semibold text-right leading-snug ">meet the owner</h1>    
+                <h1 class="uppercase text-4xl font-semibold mt-4">huy</h1>
+                <h1 class="uppercase text-4xl font-semibold mt-2">nguyen</h1>
             </div>
         </div>
-        <div class="absolute bg-servicesrp bg-center bg-cover -z-10 bottom-0 w-full h-full"></div>
-        <!-- <div class="absolute -z-10   bottom-0 h-full w-full">
-            <img class="object-cover h-full w-full" src="https://desque.sfo3.cdn.digitaloceanspaces.com/kevin/CargoCrew/CC_Huy_Img1-1024x576.jpg" alt="rp">
-        </div> -->
-        <div class="absolute bottom-0 left-0 h-450 w-1/2">
+        <div class="absolute  bg-servicesrp bg-center bg-cover -z-10 bottom-0 w-full h-full"></div>
+        <div class="absolute hidden md:block bottom-0 left-0 h-450 w-1/2">
             <img class="h-full w-full object-cover" src="https://desque.sfo3.cdn.digitaloceanspaces.com/kevin/CargoCrew/CC_Huy_Img2-1024x768.jpg" alt="lp">
         </div>
-        <div class="absolute h-1/2 w-1/2 bottom-0 right-0 flex items-center p-10 bg-cgray2 bg-opacity-70">
-            <p class="text-white ">Huy Nguyen is no stranger to success as both a business owner and competitive player in Houston market. Though that was not always the case. Like most immigrants family, he grew up struggling socially and and economically. Huy eventually found himself in the wrong crowd making bad decisions. Unable to get a job he knew he had to make some serious life changes. Huy finally saw the light at the end of the tunnel and unknown to him at the time it would change his life around. He started to work as an AC installer at only $8 an hour and learned the trade inside and out. In 2016 he risked his entire savings and pursued his dream of owning a business. He started AMS Coldpro and and solidfied himself as a trusted HVAC company in Houston. Determined and hungry for even more he founded The Cargo Crew. A true embodiment of the entrepreneur's spirit. He aspires to one day tell his story and inspire others to follow their dreams too.</p>
+        <div class=" absolute min-h-1/2 h-550 sm:h-auto w-full xl:w-1/2 bottom-0 right-0 flex items-center p-10 bg-cgray2 bg-opacity-70 ">
+            <p class="text-white h-auto ">Huy Nguyen is no stranger to success as both a business owner and competitive player in Houston market. Though that was not always the case. Like most immigrants family, he grew up struggling socially and and economically. Huy eventually found himself in the wrong crowd making bad decisions. Unable to get a job he knew he had to make some serious life changes. Huy finally saw the light at the end of the tunnel and unknown to him at the time it would change his life around. He started to work as an AC installer at only $8 an hour and learned the trade inside and out. In 2016 he risked his entire savings and pursued his dream of owning a business. He started AMS Coldpro and and solidfied himself as a trusted HVAC company in Houston. Determined and hungry for even more he founded The Cargo Crew. A true embodiment of the entrepreneur's spirit. He aspires to one day tell his story and inspire others to follow their dreams too.</p>
         </div>
     </section>
     <!-- End About  -->
 
     <!-- Contact -->
-    <section class="relative h-650 w-full bg-lastpic bg-cover bg-center lg:grid xl:grid-rows-1 xl:bg-none ">
+    <section id="contact" class="sect relative h-650 w-full bg-lastpic bg-cover bg-center lg:grid xl:grid-rows-1 xl:bg-none ">
         <div class="absolute h-full w-full bg-cgray z-40 bg-opacity-80 lg:w-1/2 flex  ">
-            <div class="flex flex-col justify-center items-end pr-20 w-full">
-                <h1>CONTACT</h1>
-                <h1>US</h1>
+            <div class="flex flex-col justify-center items-end pr-10 xl:pr-20  w-full">
+                <h1 class="text-cblue text-5xl font-semibold">CONTACT</h1>
+                <h1 class="text-5xl mt-4 font-normal mb-10">US</h1>
             </div>
-            <div class="flex flex-col justify-center w-full h-full">
-                <a href="tel:+1-832-312-4886" target="_blank"><button class="p-10">Call Us</button></a>
-                <p class="mt-5">832.312.4882</p>
-                <a class="mt-10" href="mailto:HUY@THECARGOCREW.COM" target="_blank"><button>Email Us</button></a>
-                <p class="mt-5">HUY@THECARGOCREW.COM</p>
-                <div class="mt-10">
-
+            <div class="flex flex-col justify-center w-full h-full text-white">
+                <a href="tel:+1-832-312-4886" target="_blank"><button class="py-2 hover:bg-cbhover  shadow-md px-4 font-semibold rounded-3xl bg-cblue text-xl select-none">Call Us</button></a>
+                <p class="mt-5 text-cblue text-lg font-semibold">832.312.4882</p>
+                <a class="mt-10" href="mailto:HUY@THECARGOCREW.COM" target="_blank"><button class="py-2 hover:bg-cbhover shadow-md px-4 font-semibold rounded-3xl bg-cblue text-xl select-none">Email Us</button></a>
+                <p class="mt-5 text-cblue text-lg font-semibold">HUY@THECARGOCREW.COM</p>
+                <div class="mt-10 flex gap-4 ">
+                    <a class="" href="https://www.facebook.com/thecargocrew/" target="blank">
+                        <div class="p-3 hover:bg-cbhover rounded-full bg-cblue shadow-md">
+                            <svg width="20px" height="20px" fill='white' viewBox="0 0 24 24" role="img" xmlns="http://www.w3.org/2000/svg"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                        </div>
+                    </a>
+                    <a class="" href="https://www.instagram.com/thecargocrew/" target="blank">
+                        <div class="p-3 hover:bg-cbhover rounded-full bg-cblue shadow-md">
+                            <svg width="20px" height="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 16C14.2091 16 16 14.2091 16 12C16 9.79086 14.2091 8 12 8C9.79086 8 8 9.79086 8 12C8 14.2091 9.79086 16 12 16Z" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M3 16V8C3 5.23858 5.23858 3 8 3H16C18.7614 3 21 5.23858 21 8V16C21 18.7614 18.7614 21 16 21H8C5.23858 21 3 18.7614 3 16Z" stroke="currentColor" stroke-width="2.5"/>
+                                <path d="M17.5 6.51L17.51 6.49889" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                
+                        </div>
+                    </a>
+                    <a class="" href="https://www.amscoldpro.com/" target="blank">
+                        <div class="p-3 hover:bg-cbhover rounded-full bg-cblue shadow-md">
+                            <svg width="20px" fill="white" height="20px" viewBox="-2 -2 24 24" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMinYMin" class="jam jam-google"><path d='M4.376 8.068A5.944 5.944 0 0 0 4.056 10c0 .734.132 1.437.376 2.086a5.946 5.946 0 0 0 8.57 3.045h.001a5.96 5.96 0 0 0 2.564-3.043H10.22V8.132h9.605a10.019 10.019 0 0 1-.044 3.956 9.998 9.998 0 0 1-3.52 5.71A9.958 9.958 0 0 1 10 20 9.998 9.998 0 0 1 1.118 5.401 9.998 9.998 0 0 1 10 0c2.426 0 4.651.864 6.383 2.302l-3.24 2.652a5.948 5.948 0 0 0-8.767 3.114z' /></svg>
+                        </div>
+                    </a>
                 </div>
             </div>
         </div>
@@ -125,8 +214,14 @@
     </section>
     <!-- End Contact  -->
 
-    <footer>
-
+    <footer class="h-52 bg-cgray2">
+        <div class="flex flex-col items-center justify-center w-full h-full text-white">
+            <p class="text-sm select-none text-gray-500"><a href="#home" class="text-white hover:text-gray-500 cursor-pointer select-none">HOME</a> / <a href="#services" class="text-white hover:text-gray-500 cursor-pointer select-none">SERVICES</a> / <a href="#services" class="text-white hover:text-gray-500 cursor-pointer select-none">ABOUT</a> / <a href="#contact" class="text-white hover:text-gray-500 cursor-pointer select-none">CONTACT</a></p>
+            <p class="mt-4 text-xs">©2020 The Cargo Crew, LLC.</p>
+            <p class="text-xs">Designed and Managed by <a class="hover:text-gray-500 cursor-pointer" href="https://thedesque.com" target="_blank">The Desque</a></p>
+        </div>
     </footer>
+
+    <script src="app.js"></script>
 </body>
 </html>
