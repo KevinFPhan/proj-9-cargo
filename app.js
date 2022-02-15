@@ -15,7 +15,9 @@ window.addEventListener('scroll', () => {
 
 function myFunction() {
     document.querySelector("#myDropdown").classList.toggle("show");
+    document.querySelector("#myDropdown").classList.toggle("dropdownmenu-6");
     console.log("hello");
+
 }
 
 window.onclick = function(event) {
