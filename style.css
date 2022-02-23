@@ -1,6 +1,6 @@
 
 
-.dropdownmenu-6 {
+.dropdownmenu {
     animation: growDown 300ms ease-in-out forwards;
     transform-origin: top center;
 }

@@ -4,10 +4,29 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Desque">
+    <meta name="title" content="The Cargo Crew - A Private Freight Company">
+    <meta name="description" content="The Cargo Crew is a private freight company specialized in expediting the needs of commercial freight companies. Founded in 2019, The Cargo Crew is quickly earning the trust of the freighting and logistics industry as being a reliable asset to their company. The Cargo Crew aspires to being an industry leader and providing exemplary service.">
+    <meta name="keywords" content="cargo, freight, freight company, private freight company, commercial freght company">
+
+    <!-- Open Graph  -->
+    <meta property="og:title" content="The Cargo Crew - A Private Freight Company">
+    <meta property="og:url" content="https://thecargocrew.com/">
+    <meta property="og:description" content="The Cargo Crew is a private freight company specialized in expediting the needs of commercial freight companies. Founded in 2019, The Cargo Crew is quickly earning the trust of the freighting and logistics industry as being a reliable asset to their company. The Cargo Crew aspires to being an industry leader and providing exemplary service.">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:image" content="https://desque.sfo3.cdn.digitaloceanspaces.com/cargocrew/ThCargoCrew_Logo1-1024x175.png">
+
+
+    <!-- Fonts  -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">   
+
+    <!-- Tailwindcss  -->
     <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Favicon  -->
     <link rel="icon"  href="https://desque.sfo3.cdn.digitaloceanspaces.com/cargocrew/cropped-CC_Favicon.png" sizes="32x32">
     <style type="text/tailwindcss">
         @layer base {
@@ -62,9 +81,9 @@
                     'cgray2' : '#2C2C2C',
                 },
                 backgroundImage: {
-                    'herorightpic' : 'url("https://desque.sfo3.cdn.digitaloceanspaces.com/kevin/CargoCrew/IMG_46121-1024x768.jpg")',
-                    'servicesrp' : 'url("https://desque.sfo3.cdn.digitaloceanspaces.com/kevin/CargoCrew/CC_Huy_Img1-1024x576.jpg")',
-                    'lastpic' : 'url("https://desque.sfo3.cdn.digitaloceanspaces.com/kevin/CargoCrew/The-Cargo-Crew-1024x768.jpg")',
+                    'herorightpic' : 'url("https://desque.sfo3.cdn.digitaloceanspaces.com/cargocrew/IMG_46121-1024x768.jpg")',
+                    'servicesrp' : 'url("https://desque.sfo3.cdn.digitaloceanspaces.com/cargocrew/CC_Huy_Img1-1024x576.jpg")',
+                    'lastpic' : 'url("https://desque.sfo3.cdn.digitaloceanspaces.com/cargocrew/The-Cargo-Crew-1024x768.jpg")',
                 },
                 minHeight: {
                     '350' : '350px',
@@ -89,17 +108,21 @@
 </head>
 <body >
 
+    <!-- Nav Bar  -->
     <nav class="sticky top-0 bg-gray-50 z-50 ">
         <div class="h-24 w-full flex justify-around max-w-screen-2xl mx-auto  ">
+            <!-- Nav Logo  -->
             <div class="flex items-center pr-5 sm:pr-24">
                 <img class="h-12 w-auto  " src="https://desque.sfo3.cdn.digitaloceanspaces.com/cargocrew/ThCargoCrew_Logo1-1024x175.png" alt="">
             </div>
+            <!-- Nav Links  -->
             <div class="hidden md:flex items-center gap-9">
                 <a href="#home" class="text-[13px] nav-hl select-none font-semibold hover:text-cblue hover:border-cblue border-b-2 border-gray-50  " href="#">HOME</a>
                 <a href="#services" class="text-[13px] selected-sect nav-hl select-none font-semibold hover:text-cblue border-b-2 border-gray-50 hover:border-cblue" href="#">SERVICES</a>
                 <a href="#about" class="text-[13px] nav-hl select-none font-semibold hover:text-cblue border-b-2 border-gray-50 hover:border-cblue" href="#">ABOUT</a>
                 <a href="#contact" class="text-[13px] nav-hl select-none font-semibold hover:text-cblue border-b-2 border-gray-50 hover:border-cblue" href="#">CONTACT</a>
             </div>
+            <!-- Nav Hamburger  -->
             <div class="flex md:hidden items-center">
                 <button onclick="myFunction()"  class="cursor-pointer dropbtn1 p-3 bg-cblue rounded-md shadow-lg transition-all active:bg-cbhover "><svg width="25px" height="25px" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path fill="white" d="M32 96v64h448V96H32zm0 128v64h448v-64H32zm0 128v64h448v-64H32z"/></svg></button>
             </div> 
@@ -108,7 +131,7 @@
 
 
     <!-- Dropdown Menu  -->  
-    <section class="dropdown1 relative block dropdownmenu-6 overflow-y-auto ">
+    <section class="dropdown1 relative block dropdownmenu overflow-y-auto ">
         <div id="myDropdown" class="dropdown-content1">
             <a href="#home">HOME</a>
             <a href="#services" >SERVICES</a>
